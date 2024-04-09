@@ -16,16 +16,16 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
 
     @Override
     public void onUpdateEventReceived(Update update) {
-        if (getMessageText().equalsIgnoreCase("niklaus")) {
-            sendTextMessageAsync("Coqueto solo con mujeres");
+
+        if (getMessageText().equals("/start")){
+            sendTextMessageAsync("*Hola* _Monstruo_");
         }else{
-            if (getMessageText().equalsIgnoreCase("hope")){
-                sendTextMessageAsync("Coqueta");
-            }else{
-                sendTextMessageAsync("Hola Monstruo");
+            if (getMessageText().contains("hope")) {
+                sendTextMessageAsync("*Coqueta*");
+            }if(getMessageText().contains("niklaus"))
+                sendTextMessageAsync("*Coqueto* _solo con mujeres_");
             }
         }
-    }
 
     public static void main(String[] args) throws TelegramApiException {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
