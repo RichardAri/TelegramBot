@@ -29,12 +29,14 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //inicio nivel 1
         if (getMessageText().equals("/start")){
             setUserGlory(0);
+            sendPhotoMessageAsync("step_1_pic");
             sendTextMessageAsync(STEP_1_TEXT,Map.of("Hackear la nevera","step_1_btn"));
         }
 
         //nivel 2
         if (getCallbackQueryButtonKey().equals("step_1_btn")){
             setUserGlory(20);
+            sendPhotoMessageAsync("step_2_pic");
             sendTextMessageAsync(STEP_2_TEXT,Map.of("¡Tomar una salchicha! +20 de fama","step_2_btn",
             "¡Tomar un pescado! +20 de fama","step_2_btn",
             "¡Tirar una lata de pepinillos! +20 de fama","step_2_btn"
@@ -44,6 +46,7 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //nivel 3
         if (getCallbackQueryButtonKey().equals("step_2_btn")){
             setUserGlory(20);
+            sendPhotoMessageAsync("step_3_pic");
             sendTextMessageAsync(STEP_3_TEXT,Map.of("¡Hackear al robot aspirador","step_3_btn"));
         }
 
@@ -51,7 +54,7 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         if (getCallbackQueryButtonKey().equals("step_3_btn")){
             setUserGlory(30);
 
-            sendPhotoMessageAsync();
+            sendPhotoMessageAsync("step_4_pic");
             sendTextMessageAsync(STEP_4_TEXT,Map.of("¡Enviar al robot aspiradora por comida! +30 de fama","step_4_btn",
             "¡Dar un paseo en el robot aspirador! +30 de fama","step_4_btn",
             "¡Huir del robot aspirador! +30 de fama","step_4_btn"
@@ -61,6 +64,7 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //nivel 5
         if (getCallbackQueryButtonKey().equals("step_4_btn")){
             setUserGlory(30);
+            sendPhotoMessageAsync("step_5_pic");
             sendTextMessageAsync(STEP_5_TEXT,Map.of("¡Enviar al robot aspiradora por comida! +30 de fama","step_5_btn",
             "¡Dar un paseo en el robot aspirador! +30 de fama","step_5_btn",
             "¡Huir del robot aspirador! +30 de fama","step_5_btn"
@@ -70,6 +74,7 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //nivel 6
         if (getCallbackQueryButtonKey().equals("step_5_btn")){
             setUserGlory(30);
+            sendPhotoMessageAsync("step_6_pic");
             sendTextMessageAsync(STEP_6_TEXT,Map.of("¡Ponerse la go Pro! +40 de fama","step_6_btn",
             "¡Internet ilimitado! +40 de fama","step_6_btn",
             "¡Memoria ilimitada! +40 de fama","step_6_btn"
@@ -79,19 +84,22 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //nivel 7
         if (getCallbackQueryButtonKey().equals("step_6_btn")){
             setUserGlory(30);
+            sendPhotoMessageAsync("step_7_pic");
             sendTextMessageAsync(STEP_7_TEXT,Map.of("¡Hackear la computadora!","step_7_btn"));
         }
 
         //nivel 8
         if (getCallbackQueryButtonKey().equals("step_7_btn")){
             setUserGlory(30);
+            sendPhotoMessageAsync("step_8_pic");
             sendTextMessageAsync(STEP_8_TEXT,Map.of("¡Subir de Nivel! +50 de fama","step_8_btn"));
         }
 
         //nivel FINAL
         if (getCallbackQueryButtonKey().equals("step_8_btn")){
             setUserGlory(30);
-            sendTextMessageAsync(FINAL_TEXT,Map.of("¡Salir a explorar el Mundo!","step_5_btn"));
+            sendPhotoMessageAsync("final_pic");
+            sendTextMessageAsync(FINAL_TEXT,Map.of("¡Salir a explorar el Mundo!","step_8_btn"));
         }
 
 
