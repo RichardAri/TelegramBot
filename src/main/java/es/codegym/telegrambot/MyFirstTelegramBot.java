@@ -50,6 +50,8 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
         //nivel 4
         if (getCallbackQueryButtonKey().equals("step_3_btn")){
             setUserGlory(30);
+
+            sendPhotoMessageAsync();
             sendTextMessageAsync(STEP_4_TEXT,Map.of("¡Enviar al robot aspiradora por comida! +30 de fama","step_4_btn",
             "¡Dar un paseo en el robot aspirador! +30 de fama","step_4_btn",
             "¡Huir del robot aspirador! +30 de fama","step_4_btn"
