@@ -101,8 +101,6 @@ public class MyFirstTelegramBot extends MultiSessionTelegramBot {
             sendPhotoMessageAsync("final_pic");
             sendTextMessageAsync(FINAL_TEXT,Map.of("¡Salir a explorar el Mundo!","step_8_btn"));
         }
-
-
     }
 
     public static void main(String[] args) throws TelegramApiException {
